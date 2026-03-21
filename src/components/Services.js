@@ -1,60 +1,105 @@
 // src/components/Services.js
+const serviceGroups = [
+  {
+    heading: "Accounting",
+    color: "blue",
+    icon: "📒",
+    services: [
+      { title: "Year End Outsourcing Accounting", desc: "Accurate year-end accounts preparation and filing, handled with precision and on time." },
+      { title: "Management Accounts Outsourcing", desc: "Regular management accounts to keep you informed and in control of your business." },
+      { title: "IXbrl Tagging Outsourcing", desc: "Professional iXBRL tagging for Companies House and HMRC submissions." },
+      { title: "Payroll Outsourcing", desc: "Complete payroll processing, payslips, statutory deductions, and reporting." },
+      { title: "CIS Return Outsourcing", desc: "Accurate CIS returns and contractor/subcontractor compliance support." },
+      { title: "Bookkeeping Outsourcing", desc: "Reliable day-to-day bookkeeping to keep your financial records clean and current." },
+    ],
+  },
+  {
+    heading: "Tax",
+    color: "indigo",
+    icon: "🧾",
+    services: [
+      { title: "VAT Return Outsourcing", desc: "End-to-end VAT return preparation, review, and filing to keep you compliant." },
+      { title: "Personal Tax Return Outsourcing", desc: "Self-assessment tax returns prepared accurately with maximum allowable reliefs." },
+      { title: "Corporation Tax Outsourcing", desc: "Corporation tax computations and CT600 filings handled efficiently and compliantly." },
+    ],
+  },
+  {
+    heading: "Company Secretarial",
+    color: "violet",
+    icon: "🏢",
+    services: [
+      { title: "Business Setup & Support Services", desc: "Company formations, registrations, and ongoing secretarial compliance support." },
+      { title: "Tax Registrations, Filings & Advisory Support", desc: "HMRC registrations, statutory filings, and expert advisory for your business." },
+    ],
+  },
+];
 
-import { FaBook, FaBalanceScale, FaFileInvoiceDollar, FaUsers, FaUserTie, FaGlobe } from "react-icons/fa";
+const colorMap = {
+  blue: {
+    badge: "bg-blue-100 text-blue-700",
+    icon: "bg-blue-50 text-blue-600",
+    border: "border-blue-100",
+    heading: "text-blue-700",
+    dot: "bg-blue-500",
+  },
+  indigo: {
+    badge: "bg-indigo-100 text-indigo-700",
+    icon: "bg-indigo-50 text-indigo-600",
+    border: "border-indigo-100",
+    heading: "text-indigo-700",
+    dot: "bg-indigo-500",
+  },
+  violet: {
+    badge: "bg-violet-100 text-violet-700",
+    icon: "bg-violet-50 text-violet-600",
+    border: "border-violet-100",
+    heading: "text-violet-700",
+    dot: "bg-violet-500",
+  },
+};
 
 export default function Services() {
-  const serviceList = [
-    {
-      title: "Bookkeeping & Accounting",
-      icon: <FaBook className="text-blue-600 w-8 h-8" />,
-      description: "Accurate daily record-keeping, ledger entries, and financial statements."
-    },
-    {
-      title: "Bank & Ledger Reconciliations",
-      icon: <FaBalanceScale className="text-blue-600 w-8 h-8" />,
-      description: "Ensure your financial data is accurate and up to date across all accounts."
-    },
-    {
-      title: "Payroll & HR Compliance",
-      icon: <FaUsers className="text-blue-600 w-8 h-8" />,
-      description: "Reliable payroll processing, statutory compliance and employee support."
-    },
-    {
-      title: "CFO / Controller Advisory",
-      icon: <FaUserTie className="text-blue-600 w-8 h-8" />,
-      description: "Manage budgets, forecasting and strategic financial planning without hiring in-house."
-    },
-    {
-      title: "Tax & Regulatory Compliance",
-      icon: <FaFileInvoiceDollar className="text-blue-600 w-8 h-8" />,
-      description: "GST, TDS, and other regulatory filings handled with precision and timeliness."
-    },
-    {
-      title: "Indian Entry / Global Expansion",
-      icon: <FaGlobe className="text-blue-600 w-8 h-8" />,
-      description: "Support for business setup, registrations, and cross-border compliance."
-    }
-  ];
-
   return (
     <section id="services" className="bg-gray-50 py-16 px-6 lg:px-20">
-      <div className="max-w-6xl mx-auto text-center mb-12">
+      <div className="max-w-6xl mx-auto text-center mb-14">
         <h2 className="text-3xl font-bold text-gray-800">Our Services</h2>
-        <p className="text-gray-600 mt-4">
-          End-to-end accounting, compliance and financial advisory services — tailored to help international businesses grow with confidence.
+        <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
+          End-to-end accounting, tax, and compliance outsourcing — tailored to help businesses grow with confidence.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {serviceList.map((svc) => (
-          <div key={svc.title} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-            <div className="flex items-center justify-center mb-4">
-              {svc.icon}
+      <div className="max-w-6xl mx-auto space-y-14">
+        {serviceGroups.map((group) => {
+          const c = colorMap[group.color];
+          return (
+            <div key={group.heading}>
+              {/* Group header */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className={`text-2xl w-10 h-10 flex items-center justify-center rounded-lg ${c.icon}`}>
+                  {group.icon}
+                </span>
+                <h3 className={`text-xl font-bold ${c.heading}`}>{group.heading}</h3>
+                <div className="flex-1 h-px bg-gray-200 ml-2" />
+              </div>
+
+              {/* Service cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                {group.services.map((svc) => (
+                  <div
+                    key={svc.title}
+                    className={`bg-white rounded-xl p-5 border ${c.border} hover:shadow-md transition`}
+                  >
+                    <div className="flex items-start gap-2 mb-2">
+                      <span className={`mt-1.5 w-2 h-2 rounded-full flex-shrink-0 ${c.dot}`} />
+                      <h4 className="text-gray-800 font-semibold text-sm leading-snug">{svc.title}</h4>
+                    </div>
+                    <p className="text-gray-500 text-sm leading-relaxed pl-4">{svc.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">{svc.title}</h3>
-            <p className="text-gray-600">{svc.description}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
