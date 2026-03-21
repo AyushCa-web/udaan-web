@@ -21,7 +21,7 @@ export default function Tabs({ tabs }) {
         {/* Logo: absolute on the left */}
         <div className="absolute left-4 flex-shrink-0">
           <img
-            src="/logo.jpeg"
+            src="/udaan-web/logo.jpeg"
             alt="Udaan Logo"
             className="h-16 w-auto"
           />
