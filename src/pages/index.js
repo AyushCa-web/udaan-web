@@ -53,8 +53,8 @@ export default function Home({ darkMode, toggleDark }) {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
-          <p>&copy; 2025 Udaan Information Services LLP · All Rights Reserved.</p>
-          <p className="mt-1 text-xs text-gray-600 italic">Website created by Sopnesh Gandhi</p>
+          <p>&copy; 2026 Udaan Information Services LLP · All Rights Reserved.</p>
+          <p className="mt-1 text-xs text-gray-600 italic">Website created by Udaan</p>
         </div>
       </footer>
 
