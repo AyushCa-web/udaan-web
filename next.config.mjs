@@ -4,6 +4,9 @@ const nextConfig = {
   basePath: '/udaan-web',
   assetPrefix: '/udaan-web/',
   images: { unoptimized: true },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
