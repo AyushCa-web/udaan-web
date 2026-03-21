@@ -4,10 +4,10 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const testimonials = [
   { author: "CEO, US Tech Firm", location: "New York, USA", flag: "🇺🇸", quote: "Udaan completely transformed our finance operations. Their offshore team integrates seamlessly with our processes — it feels like they are part of our own company. Highly recommended." },
-  { author: "CFO, SaaS Startup", location: "London, UK", flag: "🇬🇧", quote: "We scaled our bookkeeping 5x without adding a single in-house headcount. The accuracy and turnaround time from Udaan is genuinely impressive. A real competitive advantage." },
+  { author: "Partner, Accounting Firm", location: "London, UK", flag: "🇬🇧", quote: "We scaled our bookkeeping 5x without adding a single in-house headcount. The accuracy and turnaround time from Udaan is genuinely impressive. A real competitive advantage." },
   { author: "Director, Accountancy Practice", location: "Manchester, UK", flag: "🇬🇧", quote: "During our busiest January deadline period, Udaan stepped in and handled our backlog with zero errors. Their team understood our workflow within days. Outstanding service." },
   { author: "Managing Partner, CPA Firm", location: "Sydney, Australia", flag: "🇦🇺", quote: "The quality of work we receive is client-ready straight away. Udaan saves us significant time and cost. Their communication and responsiveness sets them apart from other providers." },
-  { author: "Finance Director", location: "Toronto, Canada", flag: "🇨🇦", quote: "After working with several outsourcing providers, Udaan truly stands out. They are skilled, proactive, and deeply understand accounting. We are very satisfied with the partnership." },
+  { author: "Director, Accounting Firm", location: "Toronto, Canada", flag: "🇨🇦", quote: "After working with several outsourcing providers, Udaan truly stands out. They are skilled, proactive, and deeply understand accounting. We are very satisfied with the partnership." },
 ];
 
 export default function Testimonials() {
