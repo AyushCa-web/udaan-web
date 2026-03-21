@@ -1,14 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
   output: 'export',
-//   basePath: isProd ? '/accounting-site' : '',
-//   assetPrefix: isProd ? '/accounting-site/' : '',
-  reactStrictMode: true,
-  images: {
-    unoptimized: true,
-  },
+  basePath: '/udaan-web',
+  assetPrefix: '/udaan-web/',
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
