@@ -31,8 +31,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* ❌ REMOVED <title> - fixes warning */}
+        
         {/* Primary Meta */}
-        <title>Udaan: Offshore Accounting Talent for Global Scale | 100+ Clients</title>
         <meta name="description" content="Scale your finance team with offshore talent and tech-driven accounting. 50% cost savings, full compliance. Trusted by 100+ clients since 2016. Book a free consultation." />
         <meta name="keywords" content="offshore accounting, finance outsourcing India, accounting talent, QuickBooks Xero experts, bookkeeping outsourcing, payroll outsourcing, tax compliance" />
         <meta name="robots" content="index, follow" />
@@ -54,9 +55,9 @@ export default function Document() {
         <meta name="twitter:image" content="https://www.udaanllp.com/og-image.jpg" />
 
         {/* Favicon & PWA */}
-        <link rel="icon" href="/udaan-web/favicon.ico" />
-        <link rel="apple-touch-icon" href="/udaan-web/icons/icon-192.png" />
-        <link rel="manifest" href="/udaan-web/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#1e3a8a" />
 
         {/* Google Fonts */}
