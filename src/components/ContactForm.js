@@ -11,9 +11,9 @@ import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { HiMail, HiPhone, HiOfficeBuilding, HiChat } from "react-icons/hi";
 
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "service_v2qvydb";
+const EMAILJS_TEMPLATE_ID = "template_h48q16s";
+const EMAILJS_PUBLIC_KEY = "v35uSp1c31P3oaEZc";
 
 const challenges = [
   "Scaling my accounting team",
