@@ -1,16 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',                    // ✅ REQUIRED for GitHub Pages
-  images: {
-    unoptimized: true                 // ✅ Static images only
-  },
-  trailingSlash: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-}
+  output: 'export',
+  basePath: '/udaan-web',
+  assetPrefix: '/udaan-web/',
+  images: { unoptimized: true },
+  eslint: { ignoreDuringBuilds: true },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
