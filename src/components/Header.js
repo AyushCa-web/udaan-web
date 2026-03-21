@@ -75,7 +75,7 @@ export default function Header() {
         {/* Right: illustration */}
         <div className="lg:w-1/2 flex justify-center">
           <img
-            src="/finance.svg"
+            src="/udaan-web/finance.svg"
             alt="Finance illustration"
             className="w-[420px] max-w-full"
           />
