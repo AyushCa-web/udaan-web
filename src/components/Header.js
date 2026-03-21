@@ -25,7 +25,7 @@
 //        {/* Right Illustration */}
 //        <div className="flex-1">
 //          <Image
-//            src="/finance.svg"  // 👈 place downloaded SVG in /public
+//            src="/udaan-web/finance.svg"  // 👈 place downloaded SVG in /public
 //            alt="Finance Illustration"
 //            width={500}
 //            height={400}
@@ -75,7 +75,7 @@ export default function Header() {
         {/* Right: illustration */}
         <div className="lg:w-1/2 flex justify-center">
           <img
-            src="/finance.svg"
+            src="/udaan-web/finance.svg"
             alt="Finance illustration"
             className="w-[420px] max-w-full"
           />
