@@ -76,7 +76,7 @@ export default function ContactForm() {
             {[
               { icon: <HiMail className="w-5 h-5" />, label: "Email us", value: "info@udaanllp.com" },
               { icon: <HiPhone className="w-5 h-5" />, label: "WhatsApp", value: "+91 87701 37296" },
-              { icon: <HiOfficeBuilding className="w-5 h-5" />, label: "Based in", value: "India · Serving UK, USA, Australia & more" },
+              { icon: <HiOfficeBuilding className="w-5 h-5" />, label: "Offices", value: "India and UK· Serving UK, USA, Australia & more" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center flex-shrink-0">
