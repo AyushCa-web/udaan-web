@@ -15,7 +15,7 @@ const cases = [
   {
     flag: "🇬🇧",
     country: "UK",
-    type: "SaaS Company",
+    type: "Accounting Firm",
     headline: "Bookkeeping Scaled 5x in 6 Months",
     challenge: "A fast-growing UK SaaS startup needed to scale finance operations without ballooning headcount.",
     solution: "Udaan took over all bookkeeping, VAT returns, and payroll, integrating directly with their Xero setup.",
