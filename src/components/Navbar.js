@@ -39,7 +39,7 @@ export default function Navbar({ darkMode, toggleDark }) {
         {/* Logo */}
         <div className="flex-shrink-0 cursor-pointer" onClick={() => scrollTo("home")}>
           <Image
-            src="/logo.jpeg"
+            src="/udaan-web/logo.jpeg"
             alt="Udaan Logo"
             width={120}
             height={56}
