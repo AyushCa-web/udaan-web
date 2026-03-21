@@ -25,7 +25,7 @@
 //        {/* Right Illustration */}
 //        <div className="flex-1">
 //          <Image
-//            src="/finance.svg"  // 👈 place downloaded SVG in /public
+//            src="/udaan-web/finance.svg"  // 👈 place downloaded SVG in /public
 //            alt="Finance Illustration"
 //            width={500}
 //            height={400}
