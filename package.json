@@ -6,28 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-<<<<<<< HEAD
-    "export": "next build"
-=======
-    "export": "next build"  // ✅ ADD THIS LINE ONLY
->>>>>>> 2cac55f007a97f1276a0245d735834d6a644b640
+    "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "framer-motion": "^11.18.2",
     "next": "15.5.3",
     "react": "^18.3.0",
-    "react-countup": "^6.5.3",
     "react-dom": "^18.3.0",
-    "react-hook-form": "^7.71.2",
-    "react-icons": "^5.0.0"
+    "react-icons": "^5.0.0",
+    "framer-motion": "^11.0.0",
+    "react-countup": "^6.5.0",
+    "react-hook-form": "^7.51.0",
+    "@emailjs/browser": "^4.3.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "15.5.3",
     "postcss": "^8.4.0",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.5.3"
   }
 }
