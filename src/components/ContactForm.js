@@ -75,7 +75,7 @@ export default function ContactForm() {
           <div className="space-y-5">
             {[
               { icon: <HiMail className="w-5 h-5" />, label: "Email us", value: "info@udaanllp.com" },
-              { icon: <HiPhone className="w-5 h-5" />, label: "WhatsApp", value: "+91 XXXXX XXXXX" },
+              { icon: <HiPhone className="w-5 h-5" />, label: "WhatsApp", value: "+91 87701 37296" },
               { icon: <HiOfficeBuilding className="w-5 h-5" />, label: "Based in", value: "India · Serving UK, USA, Australia & more" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
