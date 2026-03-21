@@ -18,7 +18,7 @@ export default function Home() {
   ];
 
   // ✅ Replace with your WhatsApp number (country code + number, no + or spaces)
-  const whatsappNumber = "919999999999";
+  const whatsappNumber = "918770137296";
   const whatsappMessage = encodeURIComponent("Hi, I'd like to know more about Udaan's services.");
 
   return (
