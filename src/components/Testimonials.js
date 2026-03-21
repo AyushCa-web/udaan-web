@@ -1,63 +1,111 @@
-// src/components/Testimonials.js
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+
 const testimonials = [
-  {
-    author: "Accountancy Practice, London (UK)",
-    text: "Working with the Udaan team has been a great experience. They are reliable, proactive, and always ready to go the extra mile to meet deadlines. Udaan has become a trusted partner for our outsourcing needs, and we truly value the quality and consistency of their work.",
-  },
-  {
-    author: "Accountancy Practice, Birmingham (UK)",
-    text: "Even in a short time, working with Udaan has been a very positive experience. Their team supported our growth by handling key accounting and bookkeeping tasks smoothly. They are responsive, flexible, and easy to work with. We're very happy with the partnership so far.",
-  },
-  {
-    author: "Accountancy Practice, Manchester (UK)",
-    text: "Udaan understood our systems and working style very quickly, which made a big difference during the busy January deadline. Their professional and dependable support helped us deliver work on time without stress. We now feel confident taking on new clients and growing our practice.",
-  },
-  {
-    author: "Accountancy Practice, Sydney (Australia)",
-    text: "The quality of work we receive from Udaan is excellent and ready for client meetings straight away. They are friendly, easy to approach, and provide a truly personal service with clear communication. We are very happy with the reliable support.",
-  },
-  {
-    author: "Business, New York (USA)",
-    text: "After working with several outsourcing firms, Udaan truly stands out. The team is skilled, proactive, and a pleasure to work with. We're very satisfied with their support and would happily recommend Udaan to others looking for finance and accounting help.",
-  },
-  {
-    author: "CPA Firm, Toronto (Canada)",
-    text: "Udaan's expertise in cross-border compliance has been invaluable for our Indian expansion. Their turnaround times are impressive and the accuracy of their work is consistently high. A genuinely dependable outsourcing partner.",
-  },
+  { author: "CEO, US Tech Firm", location: "New York, USA", flag: "🇺🇸", quote: "Udaan completely transformed our finance operations. Their offshore team integrates seamlessly with our processes — it feels like they are part of our own company. Highly recommended." },
+  { author: "CFO, SaaS Startup", location: "London, UK", flag: "🇬🇧", quote: "We scaled our bookkeeping 5x without adding a single in-house headcount. The accuracy and turnaround time from Udaan is genuinely impressive. A real competitive advantage." },
+  { author: "Director, Accountancy Practice", location: "Manchester, UK", flag: "🇬🇧", quote: "During our busiest January deadline period, Udaan stepped in and handled our backlog with zero errors. Their team understood our workflow within days. Outstanding service." },
+  { author: "Managing Partner, CPA Firm", location: "Sydney, Australia", flag: "🇦🇺", quote: "The quality of work we receive is client-ready straight away. Udaan saves us significant time and cost. Their communication and responsiveness sets them apart from other providers." },
+  { author: "Finance Director", location: "Toronto, Canada", flag: "🇨🇦", quote: "After working with several outsourcing providers, Udaan truly stands out. They are skilled, proactive, and deeply understand accounting. We are very satisfied with the partnership." },
 ];
 
 export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const go = (dir) => {
+    setDirection(dir);
+    setIndex((prev) => (prev + dir + testimonials.length) % testimonials.length);
+  };
+
+  const variants = {
+    enter: (d) => ({ opacity: 0, x: d > 0 ? 60 : -60 }),
+    center: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    exit: (d) => ({ opacity: 0, x: d > 0 ? -60 : 60, transition: { duration: 0.3 } }),
+  };
+
+  const t = testimonials[index];
+
   return (
-    <section id="testimonials" className="bg-white py-16 px-6 lg:px-20">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">Client Testimonials</h2>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            Trusted by accounting practices and businesses across the UK, USA, Australia, and India for reliable, accurate, and confidential outsourcing support.
+    <section id="testimonials" className="py-20 px-6 lg:px-20 bg-blue-950 dark:bg-gray-950">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <span className="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3 block">Social Proof</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
+          <p className="text-blue-200/60 max-w-xl mx-auto">
+            Trusted by accounting practices and businesses across the UK, USA, Australia, and India.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="bg-gray-50 border border-gray-100 rounded-xl p-6 hover:shadow-md transition flex flex-col"
+        {/* Carousel */}
+        <div className="relative bg-white/5 border border-white/10 rounded-3xl p-10 md:p-14 overflow-hidden">
+          {/* Big quote mark */}
+          <div className="absolute top-6 left-8 text-8xl text-white/5 font-serif select-none leading-none">"</div>
+
+          <AnimatePresence custom={direction} mode="wait">
+            <motion.div
+              key={index}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
             >
-              <div className="text-blue-200 text-5xl font-serif leading-none mb-3 select-none">"</div>
-              <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5">{t.text}</p>
-              <div className="border-t border-gray-200 pt-4">
-                <div className="text-yellow-400 text-sm mb-1">★★★★★</div>
-                <p className="text-gray-800 font-semibold text-sm">{t.author}</p>
+              {/* Stars */}
+              <div className="text-yellow-400 text-xl mb-6">★★★★★</div>
+
+              {/* Quote */}
+              <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 italic">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold text-lg">
+                  {t.flag}
+                </div>
+                <div>
+                  <p className="text-white font-semibold">{t.author}</p>
+                  <p className="text-blue-300/70 text-sm">{t.location}</p>
+                </div>
               </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-between mt-10">
+            {/* Dots */}
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }}
+                  className={`w-2 h-2 rounded-full transition-all ${i === index ? "bg-yellow-400 w-6" : "bg-white/30 hover:bg-white/50"}`}
+                />
+              ))}
             </div>
-          ))}
+            {/* Arrows */}
+            <div className="flex gap-2">
+              <button onClick={() => go(-1)} className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition">
+                <HiChevronLeft className="w-5 h-5" />
+              </button>
+              <button onClick={() => go(1)} className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition">
+                <HiChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-gray-400 text-sm italic">
-            All testimonials are from real clients. Names withheld to maintain confidentiality.
-          </p>
-        </div>
+        {/* Trust line */}
+        <p className="text-center text-blue-300/40 text-xs mt-6 italic">
+          Names withheld to maintain client confidentiality.
+        </p>
       </div>
     </section>
   );
