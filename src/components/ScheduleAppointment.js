@@ -80,7 +80,7 @@ export default function ScheduleAppointment() {
             Thank you, <strong>{form.name}</strong>. We've received your request for{" "}
             <strong>{form.date}</strong> at <strong>{form.time}</strong>.
           </p>
-          <p className="text-gray-500 text-sm">We'll confirm your appointment by email within a few hours.</p>
+          <p className="text-gray-500 text-sm">We&apos;ll confirm your appointment by email within a few hours.</p>
           <button
             onClick={() => { setStatus("idle"); setForm({ name: "", email: "", phone: "", company: "", service: "", date: "", time: "", notes: "" }); }}
             className="mt-6 text-sm text-blue-600 underline"
@@ -99,7 +99,7 @@ export default function ScheduleAppointment() {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-800">Schedule an Appointment</h2>
           <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-            Book a free consultation with our team. Pick your preferred date, time, and service — we'll confirm within a few hours.
+            Book a free consultation with our team. Pick your preferred date, time, and service — We&apos;ll confirm within a few hours.
           </p>
         </div>
 
@@ -197,7 +197,7 @@ export default function ScheduleAppointment() {
             <label className="block text-sm font-medium text-gray-700 mb-1">Additional Notes</label>
             <textarea
               name="notes" value={form.notes} onChange={handleChange} rows={3}
-              placeholder="Anything you'd like us to know before the call..."
+              placeholder="Anything you&apos;d like us to know before the call..."
               className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
@@ -219,7 +219,7 @@ export default function ScheduleAppointment() {
               {status === "sending" ? "Booking..." : "📅 Book Appointment"}
             </button>
             <p className="text-center text-xs text-gray-400 mt-3">
-              We'll confirm your slot by email within a few hours. All consultations are free.
+              We&apos;ll confirm your slot by email within a few hours. All consultations are free.
             </p>
           </div>
         </form>
