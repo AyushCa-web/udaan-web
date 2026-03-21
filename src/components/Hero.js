@@ -122,7 +122,7 @@ export default function Hero() {
           >
             <div className="relative">
               <Image
-                src="/finance.svg"
+                src="/udaan-web/finance.svg"
                 alt="Finance dashboard illustration"
                 width={520}
                 height={420}
