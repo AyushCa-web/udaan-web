@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',                    // ✅ REQUIRED for GitHub Pages
   images: {
-    unoptimized: true  // Required for GitHub Pages
+    unoptimized: true                 // ✅ Static images only
   },
   trailingSlash: true,
-  // output: 'export',  // ❌ REMOVED - causes API route errors
-  // swcMinify: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
