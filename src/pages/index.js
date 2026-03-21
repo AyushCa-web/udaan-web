@@ -8,7 +8,7 @@ import ScheduleAppointment from "../components/ScheduleAppointment";
 import ContactForm from "../components/ContactForm";
 
 // ✅ Replace with your real WhatsApp number (country code + number, no + or spaces)
-const WHATSAPP_NUMBER = "919999999999";
+const WHATSAPP_NUMBER = "918770137296";
 const WHATSAPP_MESSAGE = encodeURIComponent("Hi, I'd like to know more about Udaan's services.");
 
 export default function Home({ darkMode, toggleDark }) {
