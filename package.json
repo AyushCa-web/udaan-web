@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+<<<<<<< HEAD
     "export": "next build"
+=======
+    "export": "next build"  // ✅ ADD THIS LINE ONLY
+>>>>>>> 2cac55f007a97f1276a0245d735834d6a644b640
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
