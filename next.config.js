@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
+const isGithubPages = process.env.DEPLOY_TARGET === 'ghpages';
+
 const nextConfig = {
   output: 'export',
-  basePath: '/udaan-web',
-  assetPrefix: '/udaan-web/',
-  images: { unoptimized: true },
-  eslint: { ignoreDuringBuilds: true },
+  basePath: isGithubPages ? '/udaan-web' : '',
+  assetPrefix: isGithubPages ? '/udaan-web/' : '',
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;
